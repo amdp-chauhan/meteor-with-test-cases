@@ -1,0 +1,16 @@
+<template name="App_body">
+		{{#if header}}
+			<header>
+	        {{> header}}
+	    </header>
+    {{/if}}
+
+
+    {{> Template.dynamic template=main}}
+    
+
+    {{#if footer}}
+    	{{> footer}}
+    {{/if}}
+    
+</template>

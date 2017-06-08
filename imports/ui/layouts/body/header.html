@@ -1,0 +1,25 @@
+<template name="header">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Dummy App</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Posts</a></li>
+                <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"> Account </i>
+					        		<span class="caret"></span>
+					        	</a>
+                    <div class="dropdown-menu">
+                        {{> loginButtons}}
+                    </div>
+                </li>
+                {{#if currentUser}}
+                {{/if}}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a class="navbar-brand" href="#">{{currentUser.emails.[0].address}}</a></li>
+            </ul>
+        </div>
+    </nav>
+</template>

@@ -1,0 +1,36 @@
+<template name="posts">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Posts</h2> 
+                {{#if currentUser}} {{> insertPost }} {{/if}}
+                <hr/>
+                
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Post</th>
+                            <th>Create Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each posts}}
+                        <tr>
+                            <td>{{post}}</td>
+                            <td>{{createdAt}}</td>
+                            <td>
+                                {{#if compare userId currentUser }}
+                                  <button type="button" id="{{_id}}" class="btn btn-default removePost">Remove Post</button>
+                                {{else}}
+                                  Read-Only
+                                {{/if}}
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</template>
