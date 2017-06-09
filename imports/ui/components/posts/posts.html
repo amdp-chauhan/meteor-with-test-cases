@@ -16,14 +16,14 @@
                     </thead>
                     <tbody>
                         {{#each posts}}
-                        <tr>
+                        <tr class="post-list">
                             <td>{{post}}</td>
                             <td>{{createdAt}}</td>
                             <td>
                                 {{#if compare userId currentUser }}
                                   <button type="button" id="{{_id}}" class="btn btn-default removePost">Remove Post</button>
                                 {{else}}
-                                  Read-Only
+                                  <span class="read-only">Read-Only</span>
                                 {{/if}}
                             </td>
                         </tr>
